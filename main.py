@@ -4,15 +4,15 @@ from flask_bootstrap import Bootstrap
 from routes.text_route import text_route
 from routes.index_route import index_route
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-bootstrap = Bootstrap(app)
+bootstrap = Bootstrap(application)
 
-app.register_blueprint(text_route)
-app.register_blueprint(index_route)
+application.register_blueprint(text_route)
+application.register_blueprint(index_route)
 
 
 if __name__ == '__main__':
-    app.debug = True
-    print(app.url_map)
-    app.run()
+    application.debug = True
+    # print(application.url_map)
+    application.run()
