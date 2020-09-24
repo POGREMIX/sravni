@@ -1,6 +1,6 @@
 import sys
-
 import os
+
 
 INTERP = os.path.expanduser("/var/www/u1158772/data/flaskenv/bin/python")
 if sys.executable != INTERP:
