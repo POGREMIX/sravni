@@ -1,25 +1,25 @@
-{% extends "bootstrap/base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
 
+<form action="" method="post">
 
-{% block styles %}
-    {{super()}}
-    {#    <link rel="stylesheet" type="text/css" href={{url_for('static', filename = 'css/text.css')}}>#}
-{% endblock %}
+    {{ form.csrf_token() }}
 
-{% block title %}
-    Login
-{% endblock %}
+    {% for field in form if field.name != "csrf_token" %}
+	<p>{{ field.label() }}</p>
+	<p>{{ field }}
+	    {% for error in field.errors %}
+		{{ error }}
+	    {% endfor %}
+	</p>
+    {% endfor %}
 
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-{% endblock %}
+</form>
 
-{% block content %}
-  <h1>Hello, Bootstrap</h1>
-    <form action="" method="post">
-        {{ wtf.quick_form(form) }}
-    </form>
-{% endblock %}
+</body>
+</html>
