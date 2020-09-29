@@ -19,7 +19,7 @@ application.register_blueprint(error_route)
 
 
 if __name__ == '__main__':
-    application.debug = True
+    # application.debug = True
     application.config['SECRET_KEY'] = 'a really really really really long secret key'
     # print(application.url_map)
     application.run()
