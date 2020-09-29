@@ -13,8 +13,8 @@ def user(user_id):
     return render_template('user.html', user_id=user_id)
 
 
-@user_route.route('/user/login/', methods=['get', 'post'])
-def login():
+@user_route.route('/user/auth/', methods=['get', 'post'])
+def auth():
     form = ContactForm()
     if form.validate_on_submit():
         name = form.name.data
